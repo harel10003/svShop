@@ -12,11 +12,11 @@ function App() {
 	];
 	const [list, setList] = useState([]);
 	const [historyList, setHistoryList] = useState([]);
-
 	const [show, setShow] = useState(false);
 	const [totolPrice, setTotolPrice] = useState(0);
-	const addProduct = (name, price) => {
-		setList([...list, { name: name, price: price }]);
+	const addProduct = (pName, price) => {
+		setList([...list, { name: pName, price: price }]);
+
 		toPrice(price);
 	};
 	const toPrice = (price) => {

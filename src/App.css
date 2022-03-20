@@ -36,7 +36,23 @@
 		transform: rotate(360deg);
 	}
 }
+table,
+td,
+th {
+	border: 1px solid #ddd;
+	text-align: left;
+}
 
+table {
+	margin: auto;
+	border-collapse: collapse;
+	width: 30%;
+}
+
+th,
+td {
+	padding: 15px;
+}
 .cart_totalPrice {
 	margin: 20px;
 	font-size: 25px;
@@ -64,6 +80,7 @@
 }
 .products_btnAdd {
 	margin: 5px 0 0 0;
+	cursor: pointer;
 }
 .haeder_container {
 	display: flex;

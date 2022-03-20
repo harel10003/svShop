@@ -1,21 +1,32 @@
-import React, { useState } from 'react';
-
+import '../App.css';
 function Cart({ totolPrice, list, setList, buy }) {
 	// const [show, setShow] = useState(false);
+	let tempList = list
+		.map((p) => p.name)
+		.filter((value, index, array) => array.indexOf(value) === index);
 	return (
 		<>
 			<div></div>
-			<div
-			// style={{
-			// 	display: show ? 'inline' : 'none',
-			// }}
-			>
-				{list.map(({ name }, index) => (
-					<div key={index}>{name} </div>
-				))}
+			<div>
+				<table>
+					<tr>
+						<th>product</th>
+						<th>units</th>
+					</tr>
+
+					{tempList.map((name, index) => (
+						<tr key={index}>
+							<td>{name}</td>{' '}
+							<td>
+								{list.filter((p) => p.name === name).length}
+							</td>
+						</tr>
+					))}
+				</table>
 			</div>
-			<div className="cart_totalPrice">total:{totolPrice}$</div>
+			<div className="cart_totalPrice">total: {totolPrice}$</div>
 			<button
+				style={{ display: list.length === 0 ? 'none' : 'inline' }}
 				onClick={() => {
 					buy();
 				}}
